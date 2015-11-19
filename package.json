@@ -1,0 +1,21 @@
+{
+  "name": "web-seed",
+  "version": "0.0.1",
+  "description": "bower and npm project directory setup",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "npm",
+    "bower",
+    "setup",
+    "direcotry"
+  ],
+  "author": "Shane Allen Farrar",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-connect": "^0.2.0"
+  }
+}
