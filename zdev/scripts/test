@@ -1,3 +1,0 @@
-#!/bin/bash
-
-protractor tests/config/protractor.config.config.js --suite=specs,helpers,features

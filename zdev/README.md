@@ -24,14 +24,9 @@ app/assets/css directory using compass.
 This directory contains build scripts, tools, etc for running and testing the 
 application of modifying development and production states. 
 
-Scripts are assumed to be run from the top of the dev directory. For example:
-
->> cd zdev
->> ./scripts/test
-
 /tests
 ------
 This directory contains tests which written in coffee and run by protractor,
-mocha, chai, chai-as-promised and mocha-cucumber. Together these tools enable
+mocha, chai, chai-as-promised and cucumber. Together these tools enable
 e2e testing as well as unit testing, which is split between the features and
 specs folders. Config holds configurations for the tools.
