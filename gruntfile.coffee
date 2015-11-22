@@ -15,8 +15,8 @@ module.exports = (grunt)->
       js: '<%= project.assets %>/js'
       img: '<%= project.assets %>/img'
       fonts: '<%= project.assets %>/fonts'
-      features: 'zdev/test/features'
-      specs: 'zdev/test/specs'
+      features: 'zdev/tests/features'
+      specs: 'zdev/tests/specs'
 
     env:
       test:
