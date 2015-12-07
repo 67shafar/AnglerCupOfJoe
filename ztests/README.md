@@ -1,4 +1,4 @@
-Web-seed zdev/tests directory readme
+Web-seed ztests directory readme
 =====================================
 
 This directory contains tests which written in coffee and run by protractor,

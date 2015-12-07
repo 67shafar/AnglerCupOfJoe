@@ -8,7 +8,7 @@ module.exports = (grunt)->
 
     project:
       app: 'public/app'
-      coffee: 'zdev/coffee'
+      coffee: 'zdev/app'
       sass: 'zdev/sass'
       assets: 'public/assets'
       css: '<%= project.assets %>/css'
@@ -42,13 +42,21 @@ module.exports = (grunt)->
           stdout: true
 
     coffee:
-      glob_to_multiple:
-        expand: true
-        flatten: false
-        cwd: '<%= project.coffee %>'
-        src: ['**/*.coffee']
-        dest: '<%= project.app %>'
-        ext: '.js'
+      dev:
+        options:
+          sourceMap: true
+          join: true
+        files: [
+          src: '<%= project.coffee %>/**/*.coffee'
+          dest:'<%= project.app %>/app.js'
+        ]
+      dist:
+        options:
+          join: true
+        files: [
+          src: '<%= project.coffee %>/**/*.coffee'
+          dest:'<%= project.app %>/app.js'
+        ]
 
     compass:
       dev:
@@ -70,6 +78,58 @@ module.exports = (grunt)->
           fontsDir: '<%= project.assets %>/fonts'
           outputStyle: 'compressed'
 
+    haml:
+      dev:
+        expand: true
+        cwd: 'zdev'
+        src: '**/*.haml'
+        dest: 'public'
+        ext: '.html'
+        flatten: false
+      dist:
+        expand: true
+        cwd: 'zdev'
+        src: '**/*.haml'
+        dest: 'public'
+        ext: '.html'
+        flatten: false
+
+    clean:
+      all:
+        src: ['public/app/**/*', 'public/**/*.html', 'public/**/*.js', 'public/**/*.css', 'public/**/*.map']
+      build:
+        src: ['public/**/*.html', 'public/**/*.js', 'public/**/*.css', 'public/**/*.map']
+      dist:
+        src: ['public/app/app.js']
+
+    uglify:
+      dev:
+        options:
+          sourceMapIn: '<%= project.app %>/app.js.map'
+          sourceMap: true
+          sourceMapName: '<%= project.app %>/app.min.js.map'
+        files: [
+          src: '<%= project.app %>/app.js'
+          dest: '<%= project.app %>/app.min.js'
+        ]
+      dist:
+        files: [
+          src: '<%= project.app %>/app.js'
+          dest: '<%= project.app %>/app.min.js'
+        ]
+
+    watch:
+      haml:
+        files:['zdev/**/*.haml']
+        tasks: ['haml:dev']
+      coffee:
+        files: ['<%= project.coffee %>/**/*.coffee']
+        tasks: ['coffee:dev', 'uglify:dev']
+      compass:
+        files: ['<%= project.sass %>/**/*.sass', '<%= project.sass %>/**/*.scss']
+        tasks: ['compass:dev']
+
+
     mochaTest:
       unit:
         options:
@@ -83,11 +143,15 @@ module.exports = (grunt)->
   grunt.loadNpmTasks 'grunt-shell'
   grunt.loadNpmTasks 'grunt-mocha-test'
   grunt.loadNpmTasks 'grunt-contrib-compass'
-  
+  grunt.loadNpmTasks 'grunt-contrib-haml'
+  grunt.loadNpmTasks 'grunt-contrib-clean'
+  grunt.loadNpmTasks 'grunt-contrib-uglify'
+  grunt.loadNpmTasks 'grunt-contrib-watch'
+
   grunt.registerTask 'server', ['connect:server']
-  grunt.registerTask 'default', ['compass:dev','coffee']
+  grunt.registerTask 'default', ['compass:dev','coffee:dev', 'haml:dev', 'uglify:dev']
   grunt.registerTask 'selenium', ['shell:selenium']
   grunt.registerTask 'e2e', ['env:test', 'cucumberjs']
   grunt.registerTask 'unit', ['mochaTest:unit']
-  grunt.registerTask 'build', ['compass:dev','coffee']
-  grunt.registerTask 'publish', ['compass:dist', 'coffee']
+  grunt.registerTask 'build', ['clean:all', 'compass:dev','coffee:dev', 'haml:dev', 'uglify:dev']
+  grunt.registerTask 'publish', ['clean:all', 'compass:dist', 'coffee:dist', 'haml:dist', 'uglify:dist', 'clean:dist']
