@@ -7,7 +7,7 @@ Folders:
 * /sass
 
 
-/coffee
+/app
 -------
 This folder contains the coffeescript that will ultiamtely be compiled to
 javascript in the public/app folder. The javascript is built by testing the 
