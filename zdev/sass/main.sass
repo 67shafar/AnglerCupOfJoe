@@ -1,8 +1,9 @@
 //Configuration imports
 @import "config/config"
-
-//Base imports
 @import "compass"
+//Base imports
+@import "base/typography"
+@import "base/variables"
 
 //Common imports
 @import "common/functions"
@@ -12,6 +13,11 @@
 //layout imports
 
 //Component imports
+@import "components/navigation"
+@import "components/slider"
+@import "components/home"
+@import "components/menu"
+@import "components/footer"
 
 //Fixes
 [ng\:cloak],
@@ -21,3 +27,6 @@
 .ng-cloak, 
 .x-ng-cloak
   display: none !important
+body
+  min-width: 320px
+  overflow-x: hidden

@@ -6,9 +6,8 @@
     %link{:href => "assets/css/vendors/bootstrap.css", :rel => "stylesheet"}/
     %link{:href => "assets/css/main.css", :rel => "stylesheet"}/
   %body
-    .container
-      %nav-bar
-      %div{"ng-view" => ""}
+    %nav-bar
+    %div{'ng-view' => true}
     %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"}
     %script{:src => "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"}
     %script{:src => "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.min.js"}

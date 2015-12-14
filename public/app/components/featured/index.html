@@ -1,0 +1,19 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-xs-12'>
+      <h2>Featured Dishes</h2>
+    </div>
+  </div>
+  <div class='row' ng-if='$index &gt;= index' ng-repeat='feature is features | limitTo: 4'>
+    <div class='col-sm-4'>
+      <div class='featured-dish'>
+        <img class='img-responsive'>
+        <div class='featured-descriptors'>
+          <div class='featured-name'>{{feature.name}}</div>
+          <div class='featured-price'>{{feature.price}}</div>
+          <div class='featured-rating'>{{feature.rating}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

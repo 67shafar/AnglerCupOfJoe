@@ -9,8 +9,8 @@ Feature: Website Navigation
 		Then the page title should be <title>
 
 		Examples:
-			|     page     |        title          |
-			|  "Download"  |  "Focus - Download"   |
-			| "Statistics" |  "Focus - Statistics" |
-			|  "Articles"  |  "Focus - Articles"   |
-			|  "Contact"   |  "Focus - Contact Us" |
+			|     page      	|        title          		  |
+			|  "Our Story"  	|  "AnglerCupOfJoe - Our Story"   |
+			|  "Menu" 			|  "AnglerCupOfJoe - Menu" 	 	  |
+			|  "Reservations"   |  "AnglerCupOfJoe - Reservations"|
+			|  "Reviews"   		|  "AnglerCupOfJoe - Reviews" 	  |

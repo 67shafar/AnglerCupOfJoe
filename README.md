@@ -9,7 +9,6 @@ Folders:
 * .gitignore
 * bower.json
 * package.json
-* config.rb
 
 /public
 -----
@@ -43,7 +42,6 @@ about Web-seed.
 gruntfile.coffee
 ------
 Contains basic settigns for serving this app for development.
-
 
 SETUP
 =====

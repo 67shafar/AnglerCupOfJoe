@@ -1,0 +1,41 @@
+@mixin headings($font-size, $font-family: wc_mano_negra_bta, $color: #ffffff)
+  font-family: $font-family !important
+  font-size: $font-size !important
+  color: $color !important
+  line-height: 1
+
+.slider
+  padding: 0px
+  background: #3a3a3a
+  ul
+    margin: 0px
+    padding: 0px
+    border: 0px
+    list-style: none
+    img
+      margin: 0px auto
+    .slider-content
+      position: absolute
+      min-width: 100%
+      min-height: 65%
+      max-height: 65%
+      top: 35%
+      left: 0px
+      margin: 0px auto
+    h1
+      @include break($small)
+        text-align: center
+        margin-bottom: 0px
+        @include headings(em(64px))
+    h3
+      @include break($small)
+        text-align: center
+        margin-top: 3px
+        @include headings(em(14px), aleo)
+        font-style: lighter
+    .dash
+      min-height: 1px
+      width: 2em
+      display: inline-block
+      background-color: white
+      margin-bottom: em(3px)

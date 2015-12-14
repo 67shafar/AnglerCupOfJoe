@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app='AnglerCupOfJoeApp' ng-controller='MainCtrl'>
+  <head>
+    <meta charset='utf-8'>
+    <title>AnglerCupOfJoe - {{ page.title() }}</title>
+    <link href='assets/css/vendors/bootstrap.css' rel='stylesheet'>
+    <link href='assets/css/main.css' rel='stylesheet'>
+  </head>
+  <body>
+    <nav-bar></nav-bar>
+    <div ng-view></div>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.min.js'></script>
+    <script src='app/app.min.js'></script>
+  </body>
+</html>

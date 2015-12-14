@@ -1,2 +1,14 @@
-%div
-  {{ page.title() }}
+-# slider, serves as the header on the home page.
+%slider
+
+-# contains the menu title
+.container
+  .row
+    .col-xs-2.col-xs-offset-5
+      %div
+        %img.img-responsive.menu-title-img{:src => "/assets/img/menu_title.png"}
+        .menu-title The Menu
+
+-# Menu items
+%menu
+%footer-dir

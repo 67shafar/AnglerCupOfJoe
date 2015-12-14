@@ -1,0 +1,12 @@
+.container
+  .row
+    %div{"ng-repeat" => "menuItem in menuItems | limitTo: limit"}
+      .col-xs-12.col-sm-6
+        .menu-item
+          .gray-line
+          .menu-item-name {{menuItem.name}} 
+          .menu-item-price {{menuItem.price | currency}}
+          .menu-item-desc {{menuItem.description}}
+  .row
+    %div
+      %a.loadButton{"ng-click" => "toggleLoadMore()"} load {{buttonText}} | <span class="glyphicon glyphicon-menu-{{direction}}"></span>

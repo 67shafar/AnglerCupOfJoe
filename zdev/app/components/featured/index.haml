@@ -1,0 +1,14 @@
+.container
+  .row
+    .col-xs-12
+      %h2 Featured Dishes
+  .row{"ng-repeat" => "feature is features | limitTo: 4", "ng-if" => "$index >= index"}
+    .col-sm-4
+      .featured-dish
+        %img.img-responsive
+        .featured-descriptors
+          .featured-name {{feature.name}}
+          .featured-price {{feature.price}}
+          .featured-rating {{feature.rating}}
+
+

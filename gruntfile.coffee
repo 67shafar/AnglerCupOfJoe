@@ -15,8 +15,8 @@ module.exports = (grunt)->
       js: '<%= project.assets %>/js'
       img: '<%= project.assets %>/img'
       fonts: '<%= project.assets %>/fonts'
-      features: 'zdev/tests/features'
-      specs: 'zdev/tests/specs'
+      features: 'ztests/features'
+      specs: 'ztests/specs'
 
     env:
       test:
@@ -31,7 +31,7 @@ module.exports = (grunt)->
         base: 'public'
 
     cucumberjs:
-      files: './<%= project.features %>/**/*.feature'
+      files: '<%= project.features %>/**/*.feature'
       options:
         coffee: true
 
@@ -61,21 +61,21 @@ module.exports = (grunt)->
     compass:
       dev:
         options:
+          basePath: 'public/'
           outputStyle: 'expanded'
-          httpPath: "public/"
-          cssDir: '<%= project.assets %>/css'
-          sassDir: "zdev/sass/"
-          imagesDir: '<%= project.assets %>/img'
-          javascriptsDir: '<%= project.assets %>/js'
-          fontsDir: '<%= project.assets %>/fonts'
+          cssDir: 'assets/css'
+          sassDir: "../zdev/sass/"
+          imagesDir: 'assets/img'
+          javascriptsDir: 'assets/js'
+          fontsDir: 'assets/fonts'
       dist:
         options:
-          httpPath: "public/"
-          cssDir: '<%= project.assets %>/css'
-          sassDir: "zdev/sass/"
-          imagesDir: '<%= project.assets %>img'
-          javascriptsDir: '<%= project.assets %>/js'
-          fontsDir: '<%= project.assets %>/fonts'
+          basePath: 'public/'
+          cssDir: 'assets/css'
+          sassDir: "../zdev/sass/"
+          imagesDir: 'assets/img'
+          javascriptsDir: 'assets/js'
+          fontsDir: 'assets/fonts'
           outputStyle: 'compressed'
 
     haml:
@@ -96,9 +96,11 @@ module.exports = (grunt)->
 
     clean:
       all:
-        src: ['public/app/**/*', 'public/**/*.html', 'public/**/*.js', 'public/**/*.css', 'public/**/*.map']
+        src: ['public/app/**/*', 'public/**/*.html', 'public/**/*.js',
+              'public/**/*.css', 'public/**/*.map']
       build:
-        src: ['public/**/*.html', 'public/**/*.js', 'public/**/*.css', 'public/**/*.map']
+        src: ['public/**/*.html', 'public/**/*.js', 'public/**/*.css',
+              'public/**/*.map']
       dist:
         src: ['public/app/app.js']
 
@@ -126,7 +128,8 @@ module.exports = (grunt)->
         files: ['<%= project.coffee %>/**/*.coffee']
         tasks: ['coffee:dev', 'uglify:dev']
       compass:
-        files: ['<%= project.sass %>/**/*.sass', '<%= project.sass %>/**/*.scss']
+        files: ['<%= project.sass %>/**/*.sass',
+                '<%= project.sass %>/**/*.scss']
         tasks: ['compass:dev']
 
 
@@ -149,9 +152,12 @@ module.exports = (grunt)->
   grunt.loadNpmTasks 'grunt-contrib-watch'
 
   grunt.registerTask 'server', ['connect:server']
-  grunt.registerTask 'default', ['compass:dev','coffee:dev', 'haml:dev', 'uglify:dev']
+  grunt.registerTask 'default', ['compass:dev','coffee:dev', 'haml:dev',
+                                 'uglify:dev']
   grunt.registerTask 'selenium', ['shell:selenium']
   grunt.registerTask 'e2e', ['env:test', 'cucumberjs']
   grunt.registerTask 'unit', ['mochaTest:unit']
-  grunt.registerTask 'build', ['clean:all', 'compass:dev','coffee:dev', 'haml:dev', 'uglify:dev']
-  grunt.registerTask 'publish', ['clean:all', 'compass:dist', 'coffee:dist', 'haml:dist', 'uglify:dist', 'clean:dist']
+  grunt.registerTask 'build', ['clean:all', 'compass:dev','coffee:dev',
+                               'haml:dev', 'uglify:dev']
+  grunt.registerTask 'publish', ['clean:all', 'compass:dist', 'coffee:dist',
+                                 'haml:dist', 'uglify:dist', 'clean:dist']
