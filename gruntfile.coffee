@@ -8,8 +8,8 @@ module.exports = (grunt)->
 
     project:
       app: 'public/app'
-      coffee: 'zdev/app'
-      sass: 'zdev/sass'
+      coffee: 'zpublic/app'
+      sass: 'zpublic/app'
       assets: 'public/assets'
       css: '<%= project.assets %>/css'
       js: '<%= project.assets %>/js'
@@ -64,7 +64,7 @@ module.exports = (grunt)->
           basePath: 'public/'
           outputStyle: 'expanded'
           cssDir: 'assets/css'
-          sassDir: "../zdev/sass/"
+          sassDir: "../zpublic/app/"
           imagesDir: 'assets/img'
           javascriptsDir: 'assets/js'
           fontsDir: 'assets/fonts'
@@ -72,7 +72,7 @@ module.exports = (grunt)->
         options:
           basePath: 'public/'
           cssDir: 'assets/css'
-          sassDir: "../zdev/sass/"
+          sassDir: "../zpublic/app/"
           imagesDir: 'assets/img'
           javascriptsDir: 'assets/js'
           fontsDir: 'assets/fonts'
@@ -81,14 +81,14 @@ module.exports = (grunt)->
     haml:
       dev:
         expand: true
-        cwd: 'zdev'
+        cwd: 'zpublic'
         src: '**/*.haml'
         dest: 'public'
         ext: '.html'
         flatten: false
       dist:
         expand: true
-        cwd: 'zdev'
+        cwd: 'zpublic'
         src: '**/*.haml'
         dest: 'public'
         ext: '.html'
@@ -122,7 +122,7 @@ module.exports = (grunt)->
 
     watch:
       haml:
-        files:['zdev/**/*.haml']
+        files:['zpublic/**/*.haml']
         tasks: ['haml:dev']
       coffee:
         files: ['<%= project.coffee %>/**/*.coffee']

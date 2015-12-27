@@ -1,0 +1,53 @@
+@import "../../partials/common/functions"
+@import "../../partials/common/mixins"
+@import "../../partials/base/variables"
+
+@mixin headings($font-size, $font-family: wc_mano_negra_bta, $color: #ffffff)
+  font-family: $font-family !important
+  font-size: $font-size !important
+  color: $color !important
+  line-height: 1
+
+.slider
+  padding: 0
+  background: #3a3a3a
+  ul
+    margin: 0
+    padding: 0
+    border: 0
+    list-style: none
+    img
+      margin: 0 auto
+    .slider-content
+      position: absolute
+      min-width: 100%
+      min-height: 65%
+      max-height: 65%
+      top: 35%
+      left: 0
+      margin: 0 auto
+    h1
+      text-align: center
+      margin-bottom: 0
+      @include headings(em(24px))
+      @include break($x-small)
+        @include headings(em(32px))
+      @include break($small)
+        @include headings(em(64px))
+
+    h3
+      text-align: center
+      margin-top: 3px
+      font-weight: lighter
+      @include headings(em(10px), aleo)
+      @include break($small)
+        @include headings(em(14px), aleo)
+
+    .dash
+      min-height: 1px
+      width: 1em
+      display: inline-block
+      background-color: white
+      margin-bottom: em(3px)
+      @include break($small)
+        width: 2em

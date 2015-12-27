@@ -6,7 +6,9 @@ Demo: angler.farrarhost.com //Still in progress
 Folders:
 
 * /public
-* /zdev
+* /server
+* /zserver
+* /zpublic
 * /ztest
 * .gitignore
 * bower.json
@@ -17,12 +19,20 @@ Folders:
 Contains the app folder as well as the assets folder. This is the part of the 
 project that will enevitably be accessible to the public on the server.
 
-/zdev
+/server
 -------
-This folder contains the orginal source that will enevitably be compiled into
+Contains the restful API after compilation
+
+/zserver
+--------
+Contains the restful API in the development language (coffeescript). 
+
+/zpublic
+-------
+This folder contains the original source that will enevitably be compiled into
 the app that is stored in public/app. It also contains build scripts as well as
 unit tests and integration tests. It may also contain scripts that clean up the 
-project for production. i.e add and remove develpment tools and settings.
+project for production. i.e add and remove development tools and settings.
 
 /ztest
 ------
@@ -43,7 +53,7 @@ about Web-seed.
 
 gruntfile.coffee
 ------
-Contains basic settigns for serving this app for development.
+Contains basic settings for serving this app for development.
 
 SETUP
 =====
@@ -53,7 +63,7 @@ Going to create a vanilla guide in a future revision, once the initial demo is
 up and running.
 
 * Install npm and gems
-* Install compass globablly with gems
+* Install compass globally with gems
 * Install bower globally with npm
 * Install grunt and coffeescript globally with npm
 * ---- You can now run bower install to install the bower packages
@@ -64,7 +74,7 @@ up and running.
 Commands
 ========
 
-These commands are confiured in gruntfile.coffee and can be executed anyplace
+These commands are configured in gruntfile.coffee and can be executed anyplace
 in the project directory.
 
 
@@ -119,7 +129,7 @@ This command compiles haml into html and places in the public folder.
 
   grunt watch
   -----------
-Automatically compiles coffescript, haml, scss/sass upon file save.
+Automatically compiles coffeescript, haml, scss/sass upon file save.
 
   grunt clean{all,build,dist}
   ---------------------------

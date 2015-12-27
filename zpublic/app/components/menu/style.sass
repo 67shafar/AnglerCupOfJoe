@@ -1,0 +1,51 @@
+@import "../../partials/common/functions"
+@import "../../partials/base/variables"
+
+@mixin menu-info-format($side)
+  position: absolute
+  padding: 0 1.5em
+  margin: 0
+  top: 0
+  #{$side}: 15px
+  background-color: white
+  font-family: $base-font-family
+
+.gray-line
+  background-color: #d7d5d5
+  width: 100%
+  height: 1px
+  margin-top: em(10px)
+
+.menu-item-name
+  @include menu-info-format(left)
+
+.menu-item-price
+  @include menu-info-format(right)
+
+.menu-item-desc
+  font-size: em(11px)
+  margin: em(10px,11px) 0 em(30px, 11px) 20px
+  font-family: $base-font-family
+  color: #b7b7b7
+  font-style: italic
+  font-weight: lighter
+
+menu 
+  padding: 0
+
+.loadButton
+  display: block
+  max-width: em(100px)
+  line-height: 2em
+  margin: 0 auto em(100px) auto
+  text-align: center
+  background-color: white
+  border: 1px solid #b7b7b7
+  color:  #b7b7b7
+  cursor: pointer
+  font-family: $base-font-family
+  &:hover
+    color:  #b7b7b7
+    text-decoration: none
+  span
+    font-size: .75em
