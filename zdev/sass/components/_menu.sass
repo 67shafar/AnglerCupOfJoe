@@ -1,8 +1,10 @@
+@import "../common/functions"
+@import "../base/variables"
+
 @mixin menu-info-format($side)
   position: absolute
-  padding: 0px
   padding: 0 1.5em
-  margin: 0px
+  margin: 0
   top: 0
   #{$side}: 15px
   background-color: white
@@ -22,14 +24,14 @@
 
 .menu-item-desc
   font-size: em(11px)
-  margin: em(10px,11px) 0px em(30px, 11px) 20px
+  margin: em(10px,11px) 0 em(30px, 11px) 20px
   font-family: $base-font-family
   color: #b7b7b7
   font-style: italic
   font-weight: lighter
 
 menu 
-  padding: 0px
+  padding: 0
 
 .loadButton
   display: block
