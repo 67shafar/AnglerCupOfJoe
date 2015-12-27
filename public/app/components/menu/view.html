@@ -1,0 +1,19 @@
+<div class='container'>
+  <div class='row'>
+    <div ng-repeat='menuItem in menuItems | limitTo: limit'>
+      <div class='col-xs-12 col-sm-6'>
+        <div class='menu-item'>
+          <div class='gray-line'></div>
+          <div class='menu-item-name'>{{menuItem.name}}</div>
+          <div class='menu-item-price'>{{menuItem.price | currency}}</div>
+          <div class='menu-item-desc'>{{menuItem.description}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='row'>
+    <div>
+      <a class='loadButton' ng-click='toggleLoadMore()'>load {{buttonText}} | <span class="glyphicon glyphicon-menu-{{direction}}"></span></a>
+    </div>
+  </div>
+</div>
