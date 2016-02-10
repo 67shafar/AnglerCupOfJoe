@@ -1,3 +1,4 @@
+#noinspection JSUnresolvedVariable
 module.exports = ->
 
   @World = require('../support/world.coffee').World
