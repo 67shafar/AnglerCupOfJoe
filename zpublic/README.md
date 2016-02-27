@@ -1,4 +1,4 @@
-Web-seed zdev directory readme
+AnglerCupOfJoe - zpublic
 ==============================
 
 Folders:
