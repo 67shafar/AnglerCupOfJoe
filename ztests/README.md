@@ -1,4 +1,4 @@
-Web-seed ztests directory readme
+AnglerCupOfJoe - ztests
 =====================================
 
 This directory contains tests which written in coffee and run by protractor,
