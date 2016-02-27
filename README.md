@@ -1,7 +1,11 @@
-Web-seed assets/sass directory readme
+AnglerCupOfJoe - User Interface
 =====================================
 
-Demo: angler.farrarhost.com //Still in progress
+This project builds showcases a basic development enviorment for creating user interfaces with coffeescript, haml, and sass.
+It uses cucumber and mocha for BDD and unit testing. 
+
+It is a basic one page app, not yet fully functional.
+I moved the project to the Angler repo, where I began isolating the basic components that I want to reuse in other web applications.
 
 Folders:
 
